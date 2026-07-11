@@ -10,11 +10,12 @@ import Order from '@/components/order/Order'
 import Results from '@/components/results/Results'
 import Teachers from '@/components/teachers/Teachers'
 import Testimonials from '@/components/testimonials/Testimonials'
+import "./page.modules.scss"
 import React from 'react'
 
 const HomePage = () => {
   return (
-    <div>
+    <div className='main-page'>
       <Header/>
       <Hero/>
       <About/>
