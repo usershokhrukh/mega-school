@@ -38,7 +38,7 @@ export default function SmoothFadeAutoSlider() {
       >
         {slides.map((slide) => (
           <SwiperSlide className="hero__swiper-slider" key={slide.id}>
-            <Image src={slide.src} width={100} height={100} className="hero__swiper-image"/>
+            <Image src={slide.src} fill priority quality={100} unoptimized className="hero__swiper-image"/>
           </SwiperSlide>
         ))}
       </Swiper>
