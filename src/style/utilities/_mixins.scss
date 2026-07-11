@@ -1,0 +1,14 @@
+
+@mixin display() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin plus() {
+  font-family: "Plus Jakarta Sans";
+}
+
+@mixin merri() {
+  font-family: "Merriweather";
+}
