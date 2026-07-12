@@ -7,6 +7,7 @@ import "./courses.modules.scss";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Image from "next/image";
 
 export default function Courses() {
   const slides = [
@@ -128,6 +129,9 @@ export default function Courses() {
           ))}
         </Swiper>
       </div>
+      <span className="courses__bg">
+        <Image fill quality={100} unoptimized priority src={"/images/courses/courses-3d-bg.png"}/>
+      </span>
     </div>
   );
 }
