@@ -41,6 +41,7 @@ const Teachers = () => {
         <div className="teachers__cards">
           {teachers?.map(({image, experience, students, achievement}) => (
             <div className="teachers__item">
+              <Image className="teachers__bg" fill src={"/images/teachers/teachers-bg.jpg"}/>
               <span className="teachers__item-img-span">
                 <Image className="teachers__image" width={200} height={200}  src={image} quality={100} priority unoptimized/>
               </span>
