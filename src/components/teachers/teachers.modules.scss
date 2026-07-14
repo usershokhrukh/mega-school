@@ -1,0 +1,100 @@
+@use "@/style/utilities/_mixins.scss" as *;
+
+.teachers {
+  @include display();
+  width: 100%;
+  padding: 80px 0px 0px 0px;
+
+  &__title {
+    @include merri();
+    font-size: 35px;
+    font-weight: 700;
+  }
+
+  &__wrap {
+    @include display();
+    width: 100%;
+    max-width: 1400px;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  &__cards {
+    @include display();
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__item {
+    @include display();
+    position: relative;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: start;
+    align-items: start;
+    border-radius: 20px;
+    // background-color: red;
+    padding: 10px 40px 10px 40px;
+    min-height: 300px;
+    // max-width: 400px;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      height: 0px;
+      box-shadow: 0px 0px 200px 120px rgb(0, 0, 0);
+    }
+  }
+
+  &__item-img-span {
+    @include display();
+    max-height: 200px;
+    align-items: start;
+  }
+
+  &__image {
+    max-width: 500px;
+    max-height: 640px;
+  }
+
+  &__item-bottom {
+    @include display();
+    position: relative;
+    left: -30px;
+    padding: 10px;
+    width: 100%;
+    justify-content: start;
+    gap: 10px;
+    max-width: 250px;
+    z-index: 1;
+    flex-wrap: wrap;
+  }
+
+  &__item-b-span {
+    @include display();
+    @include plus();
+    flex-direction: column;
+    align-items: start;
+    word-break: break-all;
+  }
+
+  &__itmbspan-title {
+    padding: 2px 9px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.555);
+    border: 1px solid rgb(131, 131, 131);
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    font-weight: 600;
+    font-size: 13px;
+  }
+
+  &__itmbspan-text {
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+    padding: 0px 0px 0px 10px;
+  }
+}
