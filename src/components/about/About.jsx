@@ -1,8 +1,31 @@
-import React from "react";
-import "./about.modules.scss";
+'use client'
+
+import React, { useRef } from "react";
+import "./about.modules.scss"; 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+gsap.registerPlugin(ScrollTrigger);
+
 const About = () => {
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from('.about-text-block', {
+      x: 150,           
+      opacity: 0,       
+      duration: 1.2,    
+      ease: 'power3.out', 
+      scrollTrigger: {
+        trigger: '.about-text-block',
+        start: 'top 85%', 
+        toggleActions: 'play none none none', 
+      }
+    });
+  }, { scope: containerRef });
+
   return (
-    <div className="about">
+    <div ref={containerRef} className="about">
       <div className="about__cont">
         <h2 className="about__title">ABOUT US</h2>
         <div className="about__bottom">
@@ -10,7 +33,7 @@ const About = () => {
             <span>
               <svg
                 className="about__vplay"
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns="http://w3.org"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >
@@ -19,7 +42,7 @@ const About = () => {
             </span>
           </div>
           <div className="about__b-right">
-            <p className="about__b-main-txt">
+            <p className="about__b-main-txt about-text-block">
               MEGA SCHOOL TRAINING CENTER was created on July 22, 2013.
               Currently, in the most convenient places in the city of Tashkent,
               there are 6 large branches of the educational center, equipped
@@ -37,7 +60,7 @@ const About = () => {
               branches <span className="about__cit-txt-span">6</span>
             </p>
             <span className="about__g-span">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480">
+              <svg xmlns="http://w3.org" viewBox="0 0 480 480">
                 <path
                   d="M360 289.7c43.4 0 86.9-16.6 120-49.7a169.2 169.2 0 0 0-120-49.7 169.2 169.2 0 0 0 49.7-120c-46.9 0-89.3 19-120 49.7 0-43.4-16.6-86.9-49.7-120a169.2 169.2 0 0 0-49.7 120 169.2 169.2 0 0 0-120-49.7c0 46.8 19 89.3 49.7 120-43.4 0-86.9 16.6-120 49.7a169.2 169.2 0 0 0 120 49.7 169.2 169.2 0 0 0-49.7 120c46.8 0 89.3-19 120-49.7 0 43.4 16.6 86.9 49.7 120a169.2 169.2 0 0 0 49.7-120 169.2 169.2 0 0 0 120 49.7c0-46.9-19-89.3-49.7-120Z"
                   fill="currentColor"
@@ -50,7 +73,7 @@ const About = () => {
               students <span className="about__cit-txt-span">7800+</span>
             </p>
             <span className="about__g-span">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480">
+              <svg xmlns="http://w3.org" viewBox="0 0 480 480">
                 <path
                   d="M447.6 180.2v-.2A127.3 127.3 0 0 0 300 32S240 0 240 0l-60 32.1h-.2A127.3 127.3 0 0 0 32 179.8v.2L0 240l32.1 60v.2A127.3 127.3 0 0 0 179.8 448h.2l60 32.1 60-32.1h.3a127.3 127.3 0 0 0 147.6-147.7v-.2l32.1-59-32.4-60.8Z"
                   fill="currentColor"
@@ -63,7 +86,7 @@ const About = () => {
               employees <span className="about__cit-txt-span">6+</span>
             </p>
             <span className="about__g-span">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480">
+              <svg xmlns="http://w3.org" viewBox="0 0 480 480">
                 <g fill="currentColor">
                   <circle cx="120" cy="120" r="120"></circle>
                   <circle cx="120" cy="360" r="120"></circle>
