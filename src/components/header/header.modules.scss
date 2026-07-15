@@ -20,6 +20,8 @@
   justify-content: center; 
 }
 
+
+
 .header {
   position: fixed;
   top: 20px;
@@ -27,20 +29,25 @@
   transform: translateX(-50%);
   width: 78%;
   max-width: 1200px;
-  border-radius: 50px; 
-  
-  background-color: rgba(0, 0, 0, 0.284);
+  border-radius: 50px;
+
   backdrop-filter: blur(100px);
-  -webkit-backdrop-filter: blur(100px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(50px);
 
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 25px;
-  z-index: 1000;
-  box-sizing: border-box;
+
+  z-index: 100;
+
+  overflow: visible;
+}
+
+.header__logo-img { 
+    position: relative;
+    // max-width: 50px;
+    // height: 50px;
 }
 
 .header__li {
@@ -50,29 +57,69 @@
 .header__lang-wrapper {
   display: flex;
   align-items: center;
-  gap: 8px;
-
-  
+  gap: 18px;
 }
 
-.header__lang-label {
-  font-size: 14px;
-  color: #666;
+.header__language-dropdown {
+  position: relative;
 }
 
-.header__lang-select {
-  padding: 5px 10px;
+.header__language-dropdown-box {
+  position: absolute;
+  top: 70px;
+  right: 0;
+
+  width: 190px;
+
+  background: #fff;
+  border-radius: 20px;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+
+  z-index: 9999;
+}
+
+.header__language-button {
+  width: 100%;
+  border: none;
+  background: transparent;
   cursor: pointer;
-  color: #fff;
-  border-radius: 5px;
 
-  background-color: rgba(0, 0, 0, 0);
-  backdrop-filter: blur(100px);
-  -webkit-backdrop-filter: blur(100px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(50px);
-  
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 8px 12px;
+
+  border-radius: 12px;
 }
+
+.header__language-button:hover {
+  background: #f4f4f4;
+}
+
+.header__language-button-global {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,.15);
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__language-image {
+  border-radius: 50%;
+}
+
 
 @media (max-width: 768px) {
   .header {
