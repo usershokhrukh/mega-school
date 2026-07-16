@@ -1,0 +1,96 @@
+@use "@/style/utilities/_mixins.scss" as *;
+
+
+.results {
+  width: 100%;
+  padding: 80px 0;
+  background-color: #fff;
+  overflow: hidden; 
+  position: relative;
+
+  &__box {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  &__h1 {
+     @include merri();
+    font-size: 35px;
+    font-weight: 700;
+  }
+
+  &__p {
+    @include plus();
+    font-size: 16px;
+    color: #666666;
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+    line-height: 1.5;
+  }
+
+  &__imags-box {
+    display: flex;
+    gap: 30px;
+    width: max-content; 
+    animation: scrollAnimation 25s linear infinite;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+
+    img {
+      flex-shrink: 0;
+      border-radius: 28px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(255, 122, 0, 0.15);
+      background: linear-gradient(180deg, #ffdeaf 0%, #ff8c00 100%); 
+      padding: 8px; 
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.03) translateY(-5px);
+        box-shadow: 0 15px 35px rgba(255, 122, 0, 0.3);
+      }
+    }
+  }
+}
+
+@keyframes scrollAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+ 
+    transform: translateX(-50%); 
+  }
+}
+
+@media (max-width: 768px) {
+  .results {
+    padding: 50px 0;
+
+    &__h1 {
+      font-size: 28px;
+    }
+
+    &__p {
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+
+    &__imags-box {
+      gap: 15px;
+      animation-duration: 18s; 
+
+      img {
+        width: 220px !important;
+        height: 300px !important;
+        padding: 10px;
+        border-radius: 20px;
+      }
+    }
+  }
+}
