@@ -2,9 +2,9 @@ import React from 'react'
 import SmoothFadeAutoSlider from '../swiper/MainSlider'
 import "./hero.modules.scss"
 
-const Hero = () => {
+const Hero = ({introRef}) => {
   return (
-    <div className='hero'>
+    <div ref={introRef} className='hero'>
       <SmoothFadeAutoSlider/>
       <div className='hero__box'>
         <h1 className='hero__title'>
