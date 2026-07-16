@@ -1,3 +1,5 @@
+"use client"
+
 import About from "@/components/about/About";
 import Contact from "@/components/contact/Contact";
 import Cookie from "@/components/cookie/Cookie";
@@ -23,7 +25,7 @@ const HomePage = () => {
     if(!introElement) return;
      const options = { rootMargin: "-10% 0px 0px 0px" };
      const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+      entries.forEach((entry) => {        
         setIsScrolled(!entry.isIntersecting);
       });
     }, options);
