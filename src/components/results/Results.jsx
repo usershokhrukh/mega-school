@@ -11,7 +11,62 @@ const Results = () => {
 
         <div className="results__imags-box">
            <Image
-            src="/images/results/results-1.jpg"
+            src="/images/results/result-1.jpg"
+            alt="IELTS Result"
+            width={300}        
+            height={400}       
+            priority         
+          />
+
+          <Image
+            src="/images/results/result-2.jpg"
+            alt="IELTS Result"
+            width={300}        
+            height={400}       
+            priority         
+          />
+
+          <Image
+            src="/images/results/result-3.jpg"
+            alt="IELTS Result"
+            width={300}        
+            height={400}       
+            priority         
+          />
+
+          <Image
+            src="/images/results/result-4.jpg"
+            alt="IELTS Result"
+            width={300}        
+            height={400}       
+            priority         
+          />
+
+          <Image
+            src="/images/results/result-5.jpg"
+            alt="IELTS Result"
+            width={300}        
+            height={400}       
+            priority         
+          />
+          <Image
+            src="/images/results/result-6.jpg"
+            alt="IELTS Result"
+            width={300}        
+            height={400}       
+            priority         
+          />
+
+          <Image
+            src="/images/results/result-7.jpg"
+            alt="IELTS Result"
+            width={300}        
+            height={400}       
+            priority         
+          />
+
+          <Image
+            src="/images/results/result-8.jpg"
             alt="IELTS Result"
             width={300}        
             height={400}       

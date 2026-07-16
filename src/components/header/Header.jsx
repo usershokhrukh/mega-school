@@ -1,16 +1,32 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./header.modules.scss";
 import Image from "next/image";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const [selectedLanguage, setSelectedLanguage] = useState({
     name: "English",
     img: "/images/language/english.webp",
   });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const changeLanguage = (name, img) => {
     setSelectedLanguage({ name, img });
@@ -18,7 +34,7 @@ const Header = () => {
   };
 
   return (
-    <div className="header">
+    <div className={`header ${isScrolled ? "header--scrolled" : ""}`}>
       <Image
         className="header__logo-img"
         width={50}
@@ -44,7 +60,6 @@ const Header = () => {
         </li>
 
         <div className="header__language-dropdown">
-
           <button
             className="header__language-button-global"
             onClick={() => setOpen(!open)}
@@ -61,7 +76,6 @@ const Header = () => {
 
           {open && (
             <div className="header__language-dropdown-box">
-
               <button
                 className="header__language-button"
                 onClick={() =>
@@ -106,10 +120,8 @@ const Header = () => {
                 />
                 <span>O'zbek</span>
               </button>
-
             </div>
           )}
-
         </div>
       </div>
     </div>
