@@ -25,7 +25,7 @@ const About = () => {
   }, { scope: containerRef });
 
   return (
-    <div ref={containerRef} className="about">
+    <div id="about-section" ref={containerRef} className="about">
       <div className="about__cont">
         <h2 className="about__title">ABOUT US</h2>
         <div className="about__bottom">
