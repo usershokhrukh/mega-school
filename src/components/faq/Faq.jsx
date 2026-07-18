@@ -25,9 +25,9 @@ const faqData = [
       "Come to our center, where the administrators will provide you with all the necessary information. To start studying at your desired level, you must successfully pass an oral interview and a placement test.",
   },
   {
-    question: "If I start studying at INTER NATION SCHOOL, do I need to buy textbooks and notebooks myself?",
+    question: "If I start studying at Mega School, do I need to buy textbooks and notebooks myself?",
     answer:
-      "At INTER NATION SCHOOL, every new student or student advancing to the next level receives a textbook and a notebook for free (the notebook is provided only once).",
+      "At Mega School, every new student or student advancing to the next level receives a textbook and a notebook for free (the notebook is provided only once).",
   },
   {
     question: "What is the reason for the high tuition fee?",
