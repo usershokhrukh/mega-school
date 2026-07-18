@@ -31,7 +31,7 @@ const Header = ({isScrolled}) => {
       />
 
       <ul className="header__ul">
-        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#about">About</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#about-section">About</a></li>
         <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#courses">Courses</a></li>
         <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#teachers">Teachers</a></li>
         <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#results">Results</a></li>
