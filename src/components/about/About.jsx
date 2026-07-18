@@ -1,28 +1,51 @@
-'use client'
+"use client";
 
-import React, { useRef } from "react";
-import "./about.modules.scss"; 
+import React, {useContext, useEffect, useRef, useState} from "react";
+import "./about.modules.scss";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {useGSAP} from "@gsap/react";
+import {ErrorContext} from "../context/ErrorContext";
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   const containerRef = useRef(null);
+  const setError = useContext(ErrorContext);
 
-  useGSAP(() => {
-    gsap.from('.about-text-block', {
-      x: 150,           
-      opacity: 0,       
-      duration: 1.2,    
-      ease: 'power3.out', 
-      scrollTrigger: {
-        trigger: '.about-text-block',
-        start: 'top 85%', 
-        toggleActions: 'play none none none', 
-      }
-    });
-  }, { scope: containerRef });
+  useGSAP(
+    () => {
+      gsap.from(".about-text-block", {
+        x: 150,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".about-text-block",
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      });
+    },
+    {scope: containerRef},
+  );
+
+  const containerRefFull = useRef(null);
+  const [isFull, setIsFull] = useState(false);
+  const handleToggleFullScreen = () => {
+    if (typeof window === "undefined") return;
+    if (!document.fullscreenElement) {
+      containerRefFull.current.requestFullscreen().catch((err) => {
+        console.error(`Error attempting to enable fullscreen: ${err.message}`);
+        setError(`Error attempting to enable fullscreen: ${err.message}`);
+      });
+      setIsFull(true);
+    } else {
+      document.exitFullscreen();
+      setIsFull(false);
+    }
+  };
+
+      
 
   return (
     <div id="about" ref={containerRef} className="about">
