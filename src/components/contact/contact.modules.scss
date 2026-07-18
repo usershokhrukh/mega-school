@@ -5,9 +5,17 @@
   width: 100%;
   background-color: #fafafa;
   padding: 100px 0px;
-
+  
+  &__img {
+    position: absolute;
+    z-index: 0;
+    right: 40px;
+    top: 10px;
+  }
+  
   &__container {
     @include display();
+    position: relative;
     flex-direction: column;
     align-items: start;
     gap: 30px;
@@ -17,6 +25,7 @@
     margin: auto;
     padding: 40px;
     border-radius: 30px;
+    z-index: 1
   }
 
   &__title {
@@ -26,6 +35,8 @@
     align-items: start;
     font-size: 30px;
     font-weight: 600;
+    z-index: 1
+
   }
 
   &__form {
@@ -33,6 +44,8 @@
     justify-content: start;
     gap: 10px;
     width: 100%;
+    z-index: 1
+
   }
 
   &__input {
@@ -49,7 +62,8 @@
     max-width: 300px;
     &:focus {
       border: 1px solid #f99313;
-    }
+    };
+    text-transform: capitalize
   }
 
   &__submit {
