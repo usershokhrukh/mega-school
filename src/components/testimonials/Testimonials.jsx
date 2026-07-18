@@ -27,7 +27,7 @@ const testimonialsData = [
 
 const Testimonials = () => {
   return (
-    <div className="testimonials">
+    <div id='testimonials' className="testimonials">
       <div className="testimonials__box">
         <h2 className="testimonials__h2">testimonials</h2>
         <p className="testimonials__p">Real reviews from parents and students about the Mega School educational center.</p>
