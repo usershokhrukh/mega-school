@@ -39,7 +39,7 @@ const Teachers = () => {
       <div className="teachers__wrap">
         <h2 className="teachers__title">Our Teachers</h2>
         <div className="teachers__cards">
-          {teachers?.map(({image, experience, students, achievement}) => (
+          {/* {teachers?.map(({image, experience, students, achievement}) => (
             <div className="teachers__item">
               <Image className="teachers__bg" fill unoptimized src={"/images/teachers/teachers-bg.jpg"}/>
               <span className="teachers__item-img-span">
@@ -60,7 +60,113 @@ const Teachers = () => {
                 </span>
               </div>
             </div>
-          ))}
+          ))} */}
+          <div className="teachers__c-left">
+            <div className="teachers__item">
+              <Image className="teachers__bg" fill unoptimized src={"/images/teachers/teachers-bg.jpg"}/>
+              <span className="teachers__item-img-span">
+                <Image className="teachers__image" width={200} height={200}  src={teachers[0].image} quality={100} priority unoptimized/>
+              </span>
+              <div className="teachers__item-bottom">
+                <span className="teachers__item-b-span">
+                  <span className="teachers__itmbspan-title">experience</span>
+                  <span className="teachers__itmbspan-text">{teachers[0].experience}+</span>
+                </span>
+                <span className="teachers__item-b-span">
+                  <span className="teachers__itmbspan-title">students</span>
+                  <span className="teachers__itmbspan-text">{teachers[0].students}+</span>
+                </span>
+                <span className="teachers__item-b-span">
+                  <span className="teachers__itmbspan-title">achievement</span>
+                  <span className="teachers__itmbspan-text">{teachers[0].achievement}</span>
+                </span>
+              </div>
+            </div>
+            <div className="teachers__item">
+              <Image className="teachers__bg" fill unoptimized src={"/images/teachers/teachers-bg.jpg"}/>
+              <span className="teachers__item-img-span">
+                <Image className="teachers__image" width={200} height={200}  src={teachers[2].image} quality={100} priority unoptimized/>
+              </span>
+              <div className="teachers__item-bottom">
+                <span className="teachers__item-b-span">
+                  <span className="teachers__itmbspan-title">experience</span>
+                  <span className="teachers__itmbspan-text">{teachers[2].experience}+</span>
+                </span>
+                <span className="teachers__item-b-span">
+                  <span className="teachers__itmbspan-title">students</span>
+                  <span className="teachers__itmbspan-text">{teachers[2].students}+</span>
+                </span>
+                <span className="teachers__item-b-span">
+                  <span className="teachers__itmbspan-title">achievement</span>
+                  <span className="teachers__itmbspan-text">{teachers[2].achievement}</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="teachers__c-center">
+            <div className="teachers__item teachers-center-item">
+              <Image className="teachers__bg" fill unoptimized src={"/images/teachers/teachers-bg.jpg"}/>
+              <span className="teachers__item-img-span teachers__item-img-span-center">
+                <Image className="teachers__image teachers__image-center" width={300} height={300}  src={teachers[1].image} quality={100} priority unoptimized/>
+              </span>
+              <div className="teachers__item-bottom">
+                <span className="teachers__item-b-span">
+                  <span className="teachers__itmbspan-title">experience</span>
+                  <span className="teachers__itmbspan-text">{teachers[1].experience}+</span>
+                </span>
+                <span className="teachers__item-b-span">
+                  <span className="teachers__itmbspan-title">students</span>
+                  <span className="teachers__itmbspan-text">{teachers[1].students}+</span>
+                </span>
+                <span className="teachers__item-b-span">
+                  <span className="teachers__itmbspan-title">achievement</span>
+                  <span className="teachers__itmbspan-text">{teachers[1].achievement}</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="teachers__c-right">
+            <div className="teachers__item">
+              <Image className="teachers__bg" fill unoptimized src={"/images/teachers/teachers-bg.jpg"}/>
+              <span className="teachers__item-img-span">
+                <Image className="teachers__image" width={200} height={200}  src={teachers[3].image} quality={100} priority unoptimized/>
+              </span>
+              <div className="teachers__item-bottom">
+                <span className="teachers__item-b-span">
+                  <span className="teachers__itmbspan-title">experience</span>
+                  <span className="teachers__itmbspan-text">{teachers[3].experience}+</span>
+                </span>
+                <span className="teachers__item-b-span">
+                  <span className="teachers__itmbspan-title">students</span>
+                  <span className="teachers__itmbspan-text">{teachers[3].students}+</span>
+                </span>
+                <span className="teachers__item-b-span">
+                  <span className="teachers__itmbspan-title">achievement</span>
+                  <span className="teachers__itmbspan-text">{teachers[3].achievement}</span>
+                </span>
+              </div>
+            </div>
+            <div className="teachers__item">
+              <Image className="teachers__bg" fill unoptimized src={"/images/teachers/teachers-bg.jpg"}/>
+              <span className="teachers__item-img-span">
+                <Image className="teachers__image" width={200} height={200}  src={teachers[4].image} quality={100} priority unoptimized/>
+              </span>
+              <div className="teachers__item-bottom">
+                <span className="teachers__item-b-span">
+                  <span className="teachers__itmbspan-title">experience</span>
+                  <span className="teachers__itmbspan-text">{teachers[4].experience}+</span>
+                </span>
+                <span className="teachers__item-b-span">
+                  <span className="teachers__itmbspan-title">students</span>
+                  <span className="teachers__itmbspan-text">{teachers[4].students}+</span>
+                </span>
+                <span className="teachers__item-b-span">
+                  <span className="teachers__itmbspan-title">achievement</span>
+                  <span className="teachers__itmbspan-text">{teachers[4].achievement}</span>
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
