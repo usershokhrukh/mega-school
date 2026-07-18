@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Results = () => {
   return (
-    <div className='results'>
+    <div id='results' className='results'>
       <div className="results__box">
         <h1 className="results__h1">Results</h1>
         <p className="results__p">Results of our students who took the IELTS exam</p>

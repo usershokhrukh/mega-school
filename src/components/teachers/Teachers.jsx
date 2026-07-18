@@ -35,7 +35,7 @@ const Teachers = () => {
     },
   ];
   return (
-    <div className="teachers">
+    <div id="teachers" className="teachers">
       <div className="teachers__wrap">
         <h2 className="teachers__title">Our Teachers</h2>
         <div className="teachers__cards">
