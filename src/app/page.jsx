@@ -13,7 +13,7 @@ import Results from "@/components/results/Results";
 import Teachers from "@/components/teachers/Teachers";
 import Testimonials from "@/components/testimonials/Testimonials";
 import "./page.modules.scss";
-import React, {useContext, useEffect, useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {ErrorContext} from "@/components/context/ErrorContext";
 import {InfoContext} from "@/components/context/InfoContext";
 
@@ -39,25 +39,46 @@ const HomePage = () => {
     };
   }, []);
 
-  const [error, setError] = useState("");
-  const [info, setInfo] = useState("");
+  const [error, setError] = useState({
+    text: "",
+  });
+  const [info, setInfo] = useState({
+    text: "",
+  });
   const [errorClose, setErrorClose] = useState(false);
   const [infoClose, setInfoClose] = useState(false);
+  const errorTimerRef = useRef(null);
+  const infoTimerRef = useRef(null)
 
   useEffect(() => {
-    if (error.trim().length) {
+    if (error.text.trim().length) {
       setErrorClose(true);
-      setTimeout(() => {
+      if (errorTimerRef.current) {
+        clearTimeout(errorTimerRef.current);
+      }
+      errorTimerRef.current = setTimeout(() => {
         setErrorClose(null);
       }, 5000);
     } else if (errorClose != false) {
       setErrorClose(null);
     }
   }, [error]);
+
   useEffect(() => {
-    if (info.trim().length) {
+    return () => {
+      if (errorTimerRef.current) clearTimeout(errorTimerRef.current);
+      if (infoTimerRef.current) clearTimeout(infoTimerRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (info.text.trim().length) {
       setInfoClose(true);
-      setTimeout(() => {
+
+      if (infoTimerRef.current) {
+        clearTimeout(infoTimerRef.current);
+      }
+      infoTimerRef.current = setTimeout(() => {
         setInfoClose(null);
       }, 5000);
     } else if (errorClose != false) {
@@ -80,7 +101,7 @@ const HomePage = () => {
               >
                 <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11 11V17H13V11H11ZM11 7V9H13V7H11Z"></path>
               </svg>
-              <span className="error__span-text">{error}</span>
+              <span className="error__span-text">{error.text}</span>
             </span>
           </span>
 
@@ -96,7 +117,7 @@ const HomePage = () => {
               >
                 <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11 11V17H13V11H11ZM11 7V9H13V7H11Z"></path>
               </svg>
-              <span className="error__span-text">{info}</span>
+              <span className="error__span-text">{info.text}</span>
             </span>
           </span>
 
