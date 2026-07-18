@@ -31,12 +31,12 @@ const Header = ({isScrolled}) => {
       />
 
       <ul className="header__ul">
-        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#">About</a></li>
-        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#">Courses</a></li>
-        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#">Teachers</a></li>
-        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#">Results</a></li>
-        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#">Testimonials</a></li>
-        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#">FAQ</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#about">About</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#courses">Courses</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#teachers">Teachers</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#results">Results</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#testimonials">Testimonials</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#faq">FAQ</a></li>
       </ul>
 
       <div className="header__lang-wrapper">
