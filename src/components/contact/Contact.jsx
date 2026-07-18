@@ -1,16 +1,19 @@
 "use client";
 
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import "./contact.modules.scss";
 import PhoneInput from "react-phone-input-2";
 import {isValidPhoneNumber} from "libphonenumber-js";
 import {sendContactForm} from "@/app/botAction";
 import Image from "next/image";
+import { ErrorContext } from "../context/ErrorContext";
+import { InfoContext } from "../context/InfoContext";
 
 const Contact = () => {
   const [cleanPhone, setCleanPhone] = useState("+");
-  const [error, setError] = useState(null);
-  const [info, setInfo] = useState(null);
+
+  const setError = useContext(ErrorContext)  
+  const setInfo = useContext(InfoContext)
 
   const handleChange = (formattedValue) => {
     const pureNumbers = formattedValue.replace(/[\s()+-]/g, "");
@@ -24,26 +27,17 @@ const Contact = () => {
         try {
           sendContactForm(e);
           setCleanPhone("+998");
-          setInfo("The administration will be in touch soon!");
+          setInfo({text:"The administration will be in touch soon!"});
         } catch (err) {
-          setError("Something went wrong!");
+          setError({text:"Something went wrong!"});
         }
       } else {
-        setError("Phone number is incorrect!");
+        setError({text:"Phone number is incorrect!"});
       }
     } else {
-      setError("Fill all inputs!");
+      setError({text:"Fill all inputs!"});
     }
   };
-
-  useEffect(() => {
-    console.log(error);
-    
-  }, [error]);
-  useEffect(() => {
-    console.log(info);
-    
-  }, [info]);
   return (
     <div className="contact">
       <div className="contact__container">
