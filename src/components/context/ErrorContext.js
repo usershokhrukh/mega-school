@@ -1,3 +1,3 @@
 import { createContext } from "react";
 
-export const errorContext = createContext(null)
+export const ErrorContext = createContext(null)
