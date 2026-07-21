@@ -7,21 +7,21 @@ const testimonialsData = [
     name: "Lobar Ahrorova",
     initials: "LA",
     stars: 5,
-    text: "The lessons at Mega School are incredibly interactive! My daughter scored a 7.5 on her IELTS! A huge thank you to all the teachers!."
+    text: "Mega School dagi darslar juda interaktiv! Qizim IELTS imtihonida 7,5 ball oldi! Barcha o‘qituvchilarga katta rahmat!"
   },
   {
     id: 2,
     name: "Asadbek Olimov",
     initials: "AO",
     stars: 5,
-    text: "The absolute best language center! The atmosphere at Mega School is amazing, helping you learn the language naturally and quickly. Highly recommended!"
+    text: "Eng zo‘r til markazi! Mega School’dagi muhit ajoyib bo‘lib, tilni tabiiy va tez o‘rganishingizga yordam beradi. Barchaga tavsiya qilaman!"
   },
   {
     id: 3,
     name: "Zilola Rustamova",
     initials: "ZR",
     stars: 5,
-    text: "I started from absolute scratch at Mega School, and now I can speak confidently! The courses are engaging, practical, and very well-structured."
+    text: "Mega School’da mutlaqo noldan boshlaganman va hozirda o‘zimga ishonch bilan gapira olaman! Kurslar qiziqarli, amaliy va juda puxta tuzilgan."
   }
 ];
 
@@ -29,8 +29,8 @@ const Testimonials = () => {
   return (
     <div id='testimonials' className="testimonials">
       <div className="testimonials__box">
-        <h2 className="testimonials__h2">testimonials</h2>
-        <p className="testimonials__p">Real reviews from parents and students about the Mega School educational center.</p>
+        <h2 className="testimonials__h2">Fikr-mulohazalar</h2>
+        <p className="testimonials__p">"Mega School" o‘quv markazi haqida ota-onalar va o‘quvchilarning haqiqiy fikr-mulohazalari.</p>
 
         <div className="testimonials__grid">
           {testimonialsData.map((item) => (
