@@ -1,48 +1,50 @@
 "use client";
 
-import React, { useState } from "react";
+import React, {useState} from "react";
 import "./faq.modules.scss";
 
 const faqData = [
   {
-    question: "At what times are individual lessons held, and at what times are group lessons held?",
+    question:
+      "Individual darslar va guruh mashg‘ulotlari qaysi vaqtlarda o‘tkaziladi?",
     answer:
-      "Individual lessons are usually held at 07:30, 09:00, 10:30, and 12:00. Group lessons take place at 09:00, 10:30, 12:00, 14:00, 15:30, 17:00, and 18:30. Only for online classes do we also have open groups at 20:00.",
+      "Individual darslar odatda soat 07:30, 09:00, 10:30 va 12:00 da o‘tkaziladi. Guruh mashg‘ulotlari esa soat 09:00, 10:30, 12:00, 14:00, 15:30, 17:00 va 18:30 da bo‘lib o‘tadi. Faqat onlayn darslar uchun soat 20:00 da ham ochiq guruhlar mavjud.",
   },
   {
-    question: "Which branch has the best teachers?",
+    question: "Qaysi filialda eng yaxshi o‘qituvchilar bor?",
     answer:
-      "In all branches, our teachers are trained according to the same training system and are supervised by the Head Teacher. Therefore, the quality of lessons is the same high level in every branch.",
+      "Barcha filiallarda o‘qituvchilarimiz bir xil o‘quv tizimi asosida tayyorlanadi va Bosh o‘qituvchi nazorati ostida faoliyat yuritadi. Shu sababli, darslar sifati har bir filialda birdek yuqori darajada bo‘ladi.",
   },
   {
-    question: "Are there any age restrictions?",
+    question: "Yosh bo‘yicha cheklovlar bormi?",
     answer:
-      "In all our branches, the age range for group classes is from 13 to 30, as the program is specially adapted for young people. Therefore, the quality of lessons is equally high in all branches. In individual classes, we teach English to learners of any age who wish to study the language.",
+      "Barcha filiallarimizda guruh mashg‘ulotlari uchun yosh chegarasi 13 dan 30 yoshgacha etib belgilangan, chunki dastur aynan yoshlar uchun moslashtirilgan. Shu sababli, barcha filiallarda darslar sifati birdek yuqori darajada. Individual mashg‘ulotlarda esa tilni o‘rganish istagida bo‘lgan har qanday yoshdagi kishilarga ingliz tilini o‘rgatamiz.",
   },
   {
-    question: "What do I need to do to start studying at the level I want?",
+    question: "O‘zim xohlagan darajada o‘qishni boshlash uchun nima qilishim kerak?",
     answer:
-      "Come to our center, where the administrators will provide you with all the necessary information. To start studying at your desired level, you must successfully pass an oral interview and a placement test.",
+      "Markazimizga tashrif buyuring; u yerda ma’murlar sizga barcha zarur ma’lumotlarni taqdim etadilar. Tanlagan darajangizda o‘qishni boshlash uchun og‘zaki suhbat va bilim darajasini aniqlash testidan muvaffaqiyatli o‘tishingiz kerak.",
   },
   {
-    question: "If I start studying at Mega School, do I need to buy textbooks and notebooks myself?",
+    question:
+      "Agar Mega School da o‘qishni boshlasam, darslik va daftarlarni o‘zim sotib olishim kerakmi?",
     answer:
-      "At Mega School, every new student or student advancing to the next level receives a textbook and a notebook for free (the notebook is provided only once).",
+      "Mega School da har bir yangi o‘quvchi yoki keyingi bosqichga o‘tayotgan o‘quvchi darslik va daftar bilan bepul ta’minlanadi (daftar faqat bir marta beriladi).",
   },
   {
-    question: "What is the reason for the high tuition fee?",
+    question: "O‘qish uchun to‘lovning yuqori bo‘lishiga nima sabab?",
     answer:
-      "Our tuition fees fully correspond to the quality of education we provide, as we are the only center that offers training based on the Oxford University Press program, IELTS-X, the Student App platform, systematic instruction by three teachers, and access to video lessons.",
+      "Bizning ta'lim to'lovlarimiz taqdim etayotgan ta'lim sifatiga to'liq mos keladi, chunki biz Oxford University Press dasturi, IELTS-X, Student App platformasi, uch nafar o'qituvchi tomonidan olib boriladigan tizimli mashg'ulotlar va video darslardan foydalanish imkoniyatini taklif qiluvchi yagona markazmiz.",
   },
   {
-    question: "What time do the latest classes end?",
+    question: "Eng kechki darslar soat nechada tugaydi?",
     answer:
-      "The evening classes start at 18:30 because of the teachers' work schedules and transportation issues. Only for online classes, we have open groups available at 20:00.",
+      "O‘qituvchilarning ish jadvali va transport bilan bog‘liq masalalar tufayli kechki darslar soat 18:30 da boshlanadi. Faqat onlayn darslar uchun soat 20:00 da ochiq guruhlar mavjud.",
   },
   {
-    question: "Are online classes recorded videos or live lessons?",
+    question: "Onlayn darslar yozib olingan videolarmi yoki jonli darslarmi?",
     answer:
-      "Online classes are conducted live. You communicate directly with the teacher - these are not pre-recorded videos. More details",
+      "Onlayn darslar jonli efirda o‘tkaziladi. Siz o‘qituvchi bilan bevosita muloqot qilasiz — bular oldindan yozib olingan videolar emas. Batafsil ma’lumot",
   },
 ];
 
@@ -54,7 +56,7 @@ const Faq = () => {
   };
 
   return (
-    <div className="faq">
+    <div id="faq" className="faq">
       <div className="faq__box">
         <h1 className="faq__h1">FAQ</h1>
 
@@ -65,15 +67,10 @@ const Faq = () => {
             }`}
             key={index}
           >
-            <button
-              className="faq__question"
-              onClick={() => toggle(index)}
-            >
+            <button className="faq__question" onClick={() => toggle(index)}>
               <span>{item.question}</span>
 
-              <span className="faq__icon">
-                {active === index ? "−" : "+"}
-              </span>
+              <span className="faq__icon">{active === index ? "−" : "+"}</span>
             </button>
 
             <div

@@ -10,8 +10,8 @@ const Header = ({isScrolled}) => {
   const [open, setOpen] = useState(false);
 
   const [selectedLanguage, setSelectedLanguage] = useState({
-    name: "English",
-    img: "/images/language/english.webp",
+    name: "Uzbek",
+    img: "/images/language/uzbek.png",
   });
 
 
@@ -31,12 +31,13 @@ const Header = ({isScrolled}) => {
       />
 
       <ul className="header__ul">
-        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#">About</a></li>
-        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#">Courses</a></li>
-        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#">Teachers</a></li>
-        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#">Results</a></li>
-        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#">Testimonials</a></li>
-        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#">FAQ</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#about">Haqida</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#courses">Kurslar</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#teachers">O‘qituvchilar</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#results">Natijalar</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#testimonials">Fikr-mulohazalar</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#faq">FAQ</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#order">Buyurtma</a></li>
       </ul>
 
       <div className="header__lang-wrapper">
@@ -61,54 +62,7 @@ const Header = ({isScrolled}) => {
             />
           </button>
 
-          {open && (
-            <div className="header__language-dropdown-box">
-              <button
-                className="header__language-button"
-                onClick={() =>
-                  changeLanguage("Russian", "/images/language/russia.png")
-                }
-              >
-                <Image
-                  src="/images/language/russia.png"
-                  alt="Russian"
-                  width={30}
-                  height={30}
-                />
-                <span>Русский</span>
-              </button>
-
-              <button
-                className="header__language-button"
-                onClick={() =>
-                  changeLanguage("English", "/images/language/english.webp")
-                }
-              >
-                <Image
-                  src="/images/language/english.webp"
-                  alt="English"
-                  width={30}
-                  height={30}
-                />
-                <span>English</span>
-              </button>
-
-              <button
-                className="header__language-button"
-                onClick={() =>
-                  changeLanguage("Uzbek", "/images/language/uzbek.png")
-                }
-              >
-                <Image
-                  src="/images/language/uzbek.png"
-                  alt="Uzbek"
-                  width={30}
-                  height={30}
-                />
-                <span>O'zbek</span>
-              </button>
-            </div>
-          )}
+          
         </div>
       </div>
     </div>
