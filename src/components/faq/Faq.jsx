@@ -54,7 +54,7 @@ const Faq = () => {
   };
 
   return (
-    <div className="faq">
+    <div id="faq" className="faq">
       <div className="faq__box">
         <h1 className="faq__h1">Faq</h1>
 
