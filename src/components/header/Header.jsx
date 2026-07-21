@@ -10,8 +10,8 @@ const Header = ({isScrolled}) => {
   const [open, setOpen] = useState(false);
 
   const [selectedLanguage, setSelectedLanguage] = useState({
-    name: "English",
-    img: "/images/language/english.webp",
+    name: "Uzbek",
+    img: "/images/language/uzbek.png",
   });
 
 
@@ -31,13 +31,13 @@ const Header = ({isScrolled}) => {
       />
 
       <ul className="header__ul">
-        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#about">About</a></li>
-        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#courses">Courses</a></li>
-        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#teachers">Teachers</a></li>
-        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#results">Results</a></li>
-        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#testimonials">Testimonials</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#about">Haqida</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#courses">Kurslar</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#teachers">O‘qituvchilar</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#results">Natijalar</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#testimonials">Fikr-mulohazalar</a></li>
         <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#faq">FAQ</a></li>
-        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#order">Order</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#order">Buyurtma</a></li>
       </ul>
 
       <div className="header__lang-wrapper">
