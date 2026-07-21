@@ -96,6 +96,8 @@ const About = () => {
             <video
               src="/videos/mega-school-video.mp4"
               className="about__video-play"
+              width={830}
+              height={442}
             ></video>
           </div>
           <div className="about__b-right">
