@@ -30,7 +30,7 @@ const About = () => {
   );
 
   const containerRefFull = useRef(null);
-  const [isFull, setIsFull] = useState(false);
+  const [isFull, setIsFull] = useState(null);
   // const handleToggleFullScreen = () => {
   //   if (typeof window === "undefined") return;
   //   if (!document.fullscreenElement) {
@@ -52,7 +52,7 @@ const About = () => {
       video.currentTime = 0;
       video.play();
       body.classList.add("no-scroll");
-    } else {
+    } else if(isFull != null) {
       video.pause();
       body.classList.remove("no-scroll");
     }
@@ -72,7 +72,6 @@ const About = () => {
           className="about__video-play-full"
           controls
           controlslist="nofullscreen nodownload"
-          autoPlay
           preload={"auto"}
         ></video>
         <span onClick={handleToggleFullScreen} className="about__close">
