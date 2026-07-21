@@ -13,14 +13,14 @@ export default function Courses() {
   const slides = [
     {
       id: 1,
-      title: "Corporate",
+      title: "Korporativ",
       price: 999,
       list: [
-        "Unlimited number of employees",
-        "2 books (Students' book and Home book)",
-        "Grammar workbook",
-        "Academic Support service",
-        "Teacher comes to your location with all devices",
+        "Cheksiz miqdordagi xodimlar",
+        "2 ta kitob (O‘quvchi kitobi va Uy vazifalari kitobi)",
+        "Grammatika bo‘yicha mashqlar daftari",
+        "Akademik qo‘llab-quvvatlash xizmati",
+        "O‘qituvchi barcha jihozlar bilan sizning manzilingizga keladi",
       ],
     },
     {
@@ -28,37 +28,37 @@ export default function Courses() {
       title: "IELTS",
       price: 666,
       list: [
-        "Group of 13 (±1) students",
-        "Our Students’ App and 1 book (Students’ book)",
-        "Grammar workbook",
-        "Academic Support service",
-        "Video Arsenal for each lesson",
-        "Mock IELTS every week",
+        "O‘qituvchi barcha zarur vositalar bilan siz belgilagan joyga tashrif buyuradi (13 ±1 nafar talabadan iborat guruh)",
+        "Talabalar uchun maxsus ilova va 1 ta darslik (Students’ book)",
+        "Grammatika bo‘yicha mashqlar daftari",
+        "Akademik qo‘llab-quvvatlash xizmati",
+        "Har bir dars uchun video-materiallar to‘plami",
+        "Har hafta o‘tkaziladigan IELTS sinov imtihoni",
       ],
     },
     {
       id: 3,
-      title: "English Basics",
+      title: "Ingliz tilining asoslari",
       price: 555,
       list: [
-        "Group of 13 (±1) students",
-        "Our Students’ App and 1 book (Students’ book)",
-        "Grammar workbook",
-        "Academic Support service",
-        "Video Arsenal for each lesson",
+        "13 (±1) nafar talabadan iborat guruh",
+        "Talabalar uchun ilovamiz va 1 ta kitob (talabalar uchun darslik)",
+        "Grammatika bo‘yicha mashq daftari",
+        "Akademik qo‘llab-quvvatlash xizmati",
+        "Har bir dars uchun video-materiallar to‘plami",
       ],
     },
     {
       id: 4,
-      title: "English Basics",
+      title: "Ingliz tilining asoslari",
       price: 888,
       list: [
-        "Group of 13 (±1) students",
-        "Our Students’ App and 1 book (Students’ book)",
-        "Grammar workbook",
-        "Academic Support service",
-        "Video Arsenal for each lesson",
-        "Speaking Club and Masterclass",
+        "13 (±1) nafar talabadan iborat guruh",
+        "Talabalar uchun ilova va 1 ta kitob (asosiy darslik)",
+        "Grammatika bo‘yicha mashqlar daftari",
+        "Akademik qo‘llab-quvvatlash xizmati",
+        "Har bir dars uchun video-materiallar to‘plami",
+        "So‘zlashuv klubi va mahorat darsi",
       ],
     },
   ];
@@ -66,7 +66,7 @@ export default function Courses() {
   return (
     <div className="courses">
       <div className="courses__cont">
-        <h2 className="courses__title">Tariffs and Prices</h2>
+        <h2 className="courses__title">Tariflar va narxlar</h2>
         <Swiper
           className="courses__swiper"
           modules={[Autoplay]}
@@ -123,7 +123,7 @@ export default function Courses() {
                     </li>
                   ))}
                 </ul>
-                <button className="courses__button">Study {slide.title}</button>
+                <button className="courses__button">O‘rganish {slide.title}</button>
               </div>
             </SwiperSlide>
           ))}
