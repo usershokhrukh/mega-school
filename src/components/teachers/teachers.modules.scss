@@ -20,10 +20,34 @@
   }
 
   &__cards {
-    @include display();
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto;
     gap: 20px;
-    align-items: start
+  }
+
+  &__c-left {
+    @include display();
+    flex-direction: column;
+    gap: 20px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  &__c-center {
+    @include display();
+    flex-direction: column;
+    gap: 20px;
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  &__c-right {
+    @include display();
+    flex-direction: column;
+    gap: 20px;
+    grid-column: 3/4;
+    grid-row: 1/2;
   }
 
   &__item {
@@ -63,9 +87,22 @@
     align-items: start;
   }
 
+  &__item-img-span-center {
+    @include display();
+    position: relative;
+    z-index: 1;
+    max-height: 350px;
+    align-items: start;
+  }
+
   &__image {
     max-width: 500px;
     max-height: 640px;
+  }
+
+  &__image-center {
+    max-width: 700px !important;
+    max-height: 640px !important;
   }
 
   &__item-bottom {

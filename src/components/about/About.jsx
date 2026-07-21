@@ -1,63 +1,115 @@
-'use client'
+"use client";
 
-import React, { useRef } from "react";
-import "./about.modules.scss"; 
+import React, {useContext, useEffect, useRef, useState} from "react";
+import "./about.modules.scss";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {useGSAP} from "@gsap/react";
+import {ErrorContext} from "../context/ErrorContext";
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   const containerRef = useRef(null);
+  const setError = useContext(ErrorContext);
 
-  useGSAP(() => {
-    gsap.from('.about-text-block', {
-      x: 150,           
-      opacity: 0,       
-      duration: 1.2,    
-      ease: 'power3.out', 
-      scrollTrigger: {
-        trigger: '.about-text-block',
-        start: 'top 85%', 
-        toggleActions: 'play none none none', 
-      }
-    });
-  }, { scope: containerRef });
+  useGSAP(
+    () => {
+      gsap.from(".about-text-block", {
+        x: 150,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".about-text-block",
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+      });
+    },
+    {scope: containerRef},
+  );
+
+  const containerRefFull = useRef(null);
+  const [isFull, setIsFull] = useState(null);
+  // const handleToggleFullScreen = () => {
+  //   if (typeof window === "undefined") return;
+  //   if (!document.fullscreenElement) {
+  //     containerRefFull.current.requestFullscreen().catch((err) => {
+  //       console.error(`Error attempting to enable fullscreen: ${err.message}`);
+  //       setError(`Error attempting to enable fullscreen: ${err.message}`);
+  //     });
+  //     setIsFull(true);
+  //   } else {
+  //     document.exitFullscreen();
+  //     setIsFull(false);
+  //   }
+  // };
+  const handleToggleFullScreen = () => {
+    const body = document.querySelector("body");
+    var video = document.querySelector(".about__video-play-full");
+    if (!isFull) {
+      video.pause();
+      video.currentTime = 0;
+      video.play();
+      body.classList.add("no-scroll");
+    } else if(isFull != null) {
+      video.pause();
+      body.classList.remove("no-scroll");
+    }
+
+    setIsFull(!isFull);
+  };
 
   return (
-    <div ref={containerRef} className="about">
+    <div id="about" ref={containerRef} className="about">
+      <div
+        style={{display: `${isFull ? "flex" : "none"}`}}
+        className="about__full"
+        ref={containerRefFull}
+      >
+        <video
+          src="/videos/mega-school-video.mp4"
+          className="about__video-play-full"
+          controls
+          controlslist="nofullscreen nodownload"
+          preload={"auto"}
+        ></video>
+        <span onClick={handleToggleFullScreen} className="about__close">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M18 7H22V9H16V3H18V7ZM8 9H2V7H6V3H8V9ZM18 17V21H16V15H22V17H18ZM8 15V21H6V17H2V15H8Z"></path>
+          </svg>
+        </span>
+      </div>
+
       <div className="about__cont">
-        <h2 className="about__title">ABOUT US</h2>
+        <h2 className="about__title">BIZ HAQIMIZDA</h2>
         <div className="about__bottom">
           <div className="about__video">
-            <span>
-              <svg
-                className="about__vplay"
-                xmlns="http://w3.org"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM10.6219 8.41459C10.5562 8.37078 10.479 8.34741 10.4 8.34741C10.1791 8.34741 10 8.52649 10 8.74741V15.2526C10 15.3316 10.0234 15.4088 10.0672 15.4745C10.1897 15.6583 10.4381 15.708 10.6219 15.5854L15.5008 12.3328C15.5447 12.3035 15.5824 12.2658 15.6117 12.2219C15.7343 12.0381 15.6846 11.7897 15.5008 11.6672L10.6219 8.41459Z"></path>
-              </svg>
+            <span className="about__vplay-cont" onClick={handleToggleFullScreen}>
+              <svg className="about__vplay" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.376 12.4161L8.77735 19.4818C8.54759 19.635 8.23715 19.5729 8.08397 19.3432C8.02922 19.261 8 19.1645 8 19.0658V4.93433C8 4.65818 8.22386 4.43433 8.5 4.43433C8.59871 4.43433 8.69522 4.46355 8.77735 4.5183L19.376 11.584C19.6057 11.7372 19.6678 12.0477 19.5146 12.2774C19.478 12.3323 19.4309 12.3795 19.376 12.4161Z"></path></svg>
             </span>
+            <video
+              src="/videos/mega-school-video.mp4"
+              className="about__video-play"
+              width={830}
+              height={442}
+            ></video>
           </div>
           <div className="about__b-right">
             <p className="about__b-main-txt about-text-block">
-              MEGA SCHOOL TRAINING CENTER was created on July 22, 2013.
-              Currently, in the most convenient places in the city of Tashkent,
-              there are 6 large branches of the educational center, equipped
-              with advanced technologies and having good conditions for
-              training. Training is conducted according to a special program
-              developed by Oxford University (Oxford University Press), which is
-              one of the best! Our TRAINING CENTER is the first in Uzbekistan to
-              use this program in a licensed format.
+              "MEGA SCHOOL" o‘quv markazi 2013-yil 22-iyulda tashkil etilgan. Hozirgi kunda Toshkent shahrining eng qulay hududlarida ushbu o‘quv markazining ilg‘or texnologiyalar bilan jihozlangan va sifatli ta’lim olish uchun barcha sharoitlarga ega 6 ta yirik filiali faoliyat yuritmoqda. Mashg‘ulotlar dunyodagi eng yaxshi ta’lim muassasalaridan biri — Oksford universiteti (Oxford University Press) tomonidan ishlab chiqilgan maxsus dastur asosida olib boriladi! Bizning o‘quv markazimiz O‘zbekistonda ushbu dasturni litsenziyali asosda qo‘llagan birinchi markaz hisoblanadi.
+
             </p>
           </div>
         </div>
-        <div className="about__card">
+        <div className="about__card" id="courses">
           <div className="about__c-item">
             <p className="about__cit-txt">
-              branches <span className="about__cit-txt-span">6</span>
+              Filiallar <span className="about__cit-txt-span">6</span>
             </p>
             <span className="about__g-span">
               <svg xmlns="http://w3.org" viewBox="0 0 480 480">
@@ -70,7 +122,7 @@ const About = () => {
           </div>
           <div className="about__c-item">
             <p className="about__cit-txt">
-              students <span className="about__cit-txt-span">7800+</span>
+              O'quvchilar <span className="about__cit-txt-span">7800+</span>
             </p>
             <span className="about__g-span">
               <svg xmlns="http://w3.org" viewBox="0 0 480 480">
@@ -83,7 +135,7 @@ const About = () => {
           </div>
           <div className="about__c-item">
             <p className="about__cit-txt">
-              employees <span className="about__cit-txt-span">6+</span>
+              Ishchilar <span className="about__cit-txt-span">6+</span>
             </p>
             <span className="about__g-span">
               <svg xmlns="http://w3.org" viewBox="0 0 480 480">

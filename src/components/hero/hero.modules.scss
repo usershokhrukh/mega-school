@@ -25,7 +25,7 @@
     @include display();
     position: absolute;
     bottom:  calc((100% - 480px) / 2);
-    left: calc((100% - 820px) / 2);
+    left: calc((100% - 997px) / 2);
     z-index: 2;
     flex-direction: column;
     width: auto;
@@ -89,9 +89,9 @@
 @keyframes intro-box {
   0%{
     bottom:  calc((100% - 480px) / 2);
-    left: calc((100% - 820px) / 2);
+    left: calc((100% - 997px) / 2);
   }100% {
     bottom: 0px;
-    left: calc((100% - 820px) / 2);
+    left: calc((100% - 997px) / 2);
   }
 }

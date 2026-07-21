@@ -4,29 +4,16 @@ import React, { useState, useEffect } from "react";
 import "./header.modules.scss";
 import Image from "next/image";
 
-const Header = () => {
+const Header = ({isScrolled}) => {
+  console.log(isScrolled);
+  
   const [open, setOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   const [selectedLanguage, setSelectedLanguage] = useState({
-    name: "English",
-    img: "/images/language/english.webp",
+    name: "Uzbek",
+    img: "/images/language/uzbek.png",
   });
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   const changeLanguage = (name, img) => {
     setSelectedLanguage({ name, img });
@@ -34,7 +21,7 @@ const Header = () => {
   };
 
   return (
-    <div className={`header ${isScrolled ? "header--scrolled" : ""}`}>
+    <div className={`header ${isScrolled ? "light-header" : ""}`}>
       <Image
         className="header__logo-img"
         width={50}
@@ -44,24 +31,25 @@ const Header = () => {
       />
 
       <ul className="header__ul">
-        <li className="header__li"><a className="header__link" href="#">About</a></li>
-        <li className="header__li"><a className="header__link" href="#">Courses</a></li>
-        <li className="header__li"><a className="header__link" href="#">Teachers</a></li>
-        <li className="header__li"><a className="header__link" href="#">Results</a></li>
-        <li className="header__li"><a className="header__link" href="#">Testimonials</a></li>
-        <li className="header__li"><a className="header__link" href="#">FAQ</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#about">Haqida</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#courses">Kurslar</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#teachers">O‘qituvchilar</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#results">Natijalar</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#testimonials">Fikr-mulohazalar</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#faq">FAQ</a></li>
+        <li className="header__li"><a className={`header__link ${isScrolled ? "light-link" : ""}`} href="#order">Buyurtma</a></li>
       </ul>
 
       <div className="header__lang-wrapper">
         <li className="header__li">
-          <a className="header__link" href="tel:+998787777707">
+          <a className={`header__link ${isScrolled ? "light-link" : ""}`} href="tel:+998787777707">
             +998 (78) 777-77-07
           </a>
         </li>
 
         <div className="header__language-dropdown">
           <button
-            className="header__language-button-global"
+            className={`header__language-button-global ${isScrolled ? "light-box" : ""}`}
             onClick={() => setOpen(!open)}
           >
             <Image
